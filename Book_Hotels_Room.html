@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rebeccapurple;
+        }
+        div {
+            background-color: aqua;
+            width: 500px;
+            height: 700px;
+            margin-left: 550px;
+
+
+        }
+
+        h1 {
+            color: rgb(211, 28, 28);
+            margin: 20px auto;
+            margin-left: 73px;
+            padding-top: 20px;
+        }
+
+        input {
+            margin-top: 10px;
+            width: 200px;
+            margin-left: 150px;
+            color: red;
+
+        }
+
+        textarea {
+            margin-top: 10px;
+            width: 200px;
+            margin-left: 150px;
+            color: red;
+        }
+
+        select,
+        option {
+            margin-top: 10px;
+            width: 200px;
+            margin-left: 150px;
+            color: red;
+        }
+
+        button {
+            margin-top: 10px;
+            width: 200px;
+            margin-left: 150px;
+            color: red;
+            background-color: blue;
+            border: none;
+        }
+
+        #paragraph {
+            color: rgb(154, 115, 191);
+            margin-left: 149px;
+            margin-bottom: -21px
+        }
+
+        #para {
+            color: rgb(154, 115, 191);
+            margin-left: 149px;
+            margin-bottom: -21px
+        }
+
+        #pare {
+            color: rgb(154, 115, 191);
+            margin-left: 149px;
+            margin-bottom: -21px
+        }
+
+        #par {
+            color: rgb(154, 115, 191);
+            margin-left: 149px;
+            margin-bottom: -21px
+        }
+
+        #pa {
+            color: rgb(154, 115, 191);
+            margin-left: 149px;
+            margin-bottom: -21px
+        }
+
+        #pae {
+            color: rgb(154, 115, 191);
+            margin-left: 149px;
+            margin-bottom: -21px
+        }
+
+        #exits {
+            color: rgb(154, 115, 191);
+            margin-left: 149px;
+            margin-bottom: -21px
+        }
+
+        #sumbit {
+            color: rgb(154, 115, 191);
+            margin-left: 149px;
+            margin-bottom: -21px
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h1>BOOK HOTELS ROOM</h1>
+        <form action="" onsubmit="return formValidation()">
+            <input type="text" placeholder="ENTER YOUR NAME" id="name">
+            <p id="paragraph"></p>
+            <br>
+            <input type="phone" placeholder="ENTER YOUR PHONE NUMBER" id="phone">
+            <p id="para"></p>
+            <br>
+            <input type="email" placeholder="ENTER YOUR EMAIL" id="email">
+            <p id="pare"></p>
+            <br>
+            <textarea name="address" id="address" cols="20" rows="3" placeholder="ENTER YOUR ADDRESS"></textarea>
+            <p id="par"></p>
+            <br>
+            <select name="room" id="room">
+                <option value="choose">CHOOSE ROOM TYPE</option>
+                <option value="non ac">NON AC</option>
+                <option value="ac">AC</option>
+                <option value="bed">SINGLA BED</option>
+                <option value="beds">DOUBLE BED</option>
+            </select>
+            <p id="pa"></p>
+            <br>
+            <input type="date" placeholder="VISTE DATE" id="date">
+            <p id="pae"></p>
+            <br>
+            <input type="date" placeholder="EXITS DATE" id="exit">
+            <p id="exits"></p>
+            <br>
+            <button id="button">SUMBIT</button>
+            <p id="sumbit"></p>
+        </form>
+    </div>
+
+
+    <script>
+        function formValidation() {
+            let name = document.getElementById('name');
+            let phone = document.getElementById('phone');
+            let email = document.getElementById('email');
+            let address = document.getElementById('address');
+            let room = document.getElementById('room');
+            let date = document.getElementById('date');
+            let exit = document.getElementById('exit');
+            let button = document.getAnimations('button');
+            let flag = 1;
+
+
+            if (name.value == '') {
+                document.getElementById('paragraph').innerHTML = "ENTER YOUR NAME"
+                flag = 0;
+            }
+            else if (name.value.length < 3) {
+                document.getElementById('paragraph').innerHTML = "username min character 4"
+                flag = 0;
+            } else {
+                document.getElementById('paragraph').innerHTML = " "
+                flag = 1;
+            }
+            if (phone.value < 13) {
+                document.getElementById("para").innerHTML = "ENTER VALID PHONE NUMBER"
+                flag = 0;
+            } else {
+                document.getElementById('para').innerHTML = " "
+                flag = 1;
+            }
+            if (email.value == '') {
+                document.getElementById('pare').innerHTML = "ENTER EMAIL"
+                flag = 0;
+            } else {
+                document.getElementById('pare').innerHTML = ""
+                flag = 1;
+            }
+            if (address.value == '') {
+                document.getElementById('par').innerHTML = "ENTER YOUR ADDRESS"
+                flag = 0;
+            } else {
+                document.getElementById('par').innerHTML = ""
+                flag = 1;
+            }
+            if (room.value.length > 1) {
+                document.getElementById('pa').innerHTML = "CHOOSE A ROOM OF ONE"
+                flag = 0;
+            } else {
+                document.getElementById('pa').innerHTML = ""
+                flag = 1;
+            }
+            if (date.value == '') {
+                document.getElementById('pae').innerHTML = "ENTER A VISIT DATE"
+                flag = 0;
+            } else {
+                document.getElementById('pae').innerHTML = ""
+                flag = 1;
+            }
+            if (exit.value == '') {
+                document.getElementById('exits').innerHTML = "ENTER A EXIT DATE"
+                flag = 0;
+            } else {
+                document.getElementById('exits').innerHTML = ""
+                flag = 1;
+            }
+            if (button.values == '') {
+                document.getElementById('sumbit').innerHTML = "FILL THE UPPER INFORMATION"
+                flag = 0;
+            } else {
+                document.getElementById('sumbit').innerHTML = " "
+
+            }
+
+            if (flag) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
